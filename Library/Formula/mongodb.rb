@@ -7,14 +7,14 @@ class Mongodb < Formula
   if ARGV.build_head?
     packages = {
       :x86_64 => {
-        :url => 'http://fastdl.mongodb.org/osx/mongodb-osx-x86_64-2.0.0-rc0.tgz',
-        :md5 => 'df364c1d1e4baba3a527d51b00f4cc60',
-        :version => '2.0.0-rc0-x86_64'
+        :url => 'http://fastdl.mongodb.org/osx/mongodb-osx-x86_64-2.0.0-rc2.tgz',
+        :md5 => '9e9185524c695055bd9d86bdb98b5b9b',
+        :version => '2.0.0-rc2-x86_64'
       },
       :i386 => {
-        :url => 'http://fastdl.mongodb.org/osx/mongodb-osx-i386-2.0.0-rc0.tgz',
-        :md5 => '34bab47002a4f5b19171f25a2bdf4129',
-        :version => '2.0.0-rc0-i386'
+        :url => 'http://fastdl.mongodb.org/osx/mongodb-osx-i386-2.0.0-rc2.tgz',
+        :md5 => '9afdabf654d3965c6c0bfd3e032b830e',
+        :version => '2.0.0-rc2-i386'
       }
     }
   else
@@ -59,6 +59,7 @@ class Mongodb < Formula
     # Write the configuration files and launchd script
     (prefix+'mongod.conf').write mongodb_conf
     (prefix+'org.mongodb.mongod.plist').write startup_plist
+    (prefix+'org.mongodb.mongod.plist').chmod 0644
   end
 
   def caveats
